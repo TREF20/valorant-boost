@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+#faq {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#faq h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ff4655; /* Акцентный цвет */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#faq p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: block;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    background-color: #2b2b2b;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.faq-item.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.faq-item h3 {
+    margin: 0;
+    padding: 25px;
+    cursor: pointer;
+    background-color: #3b1a1a;
+    transition: background-color 0.3s;
+}
+
+.faq-item h3:hover {
+    background-color: #ff4655;
+}
+
+.faq-item .answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 25px;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-item.active .answer {
+    max-height: 300px;
+    padding: 25px;
+}
+
+footer {
+    padding: 80px 20px;
+    background-color: #2b2b2b;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff4655;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(255, 70, 85, 0.3);
+    transition: transform 0.3s;
+}
+
+.scroll-top-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    nav ul { flex-direction: column; }
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    background-color: #2b2b2b;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transform: translateX(-100px); /* Начальное состояние — сдвиг влево */
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.faq-item.visible {
+    transform: translateX(0); /* "Выкатывание" справа */
+    opacity: 1;
+}
+
+.faq-item.active {
+    box-shadow: 0 8px 20px rgba(255, 70, 85, 0.5); /* Свечение при открытии */
+    transform: translateX(0) scale(1.02); /* Лёгкое увеличение */
+}
+
+.faq-item h3 {
+    margin: 0;
+    padding: 25px;
+    cursor: pointer;
+    background-color: #3b1a1a;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.faq-item.active h3 {
+    transform: translateY(-2px); /* Лёгкий подъём заголовка */
+}
+
+.faq-item h3:hover {
+    background-color: #ff4655;
+}
+
+.faq-item .answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 25px;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-item.active .answer {
+    max-height: 300px;
+    padding: 25px;
+}
